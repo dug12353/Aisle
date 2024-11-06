@@ -10,7 +10,7 @@ import Foundation
 let baseUrl = "https://app.aisle.co/V1"
 
 let enter_PhoneNumber = "Please enter the phone number"
-let enter_CountryNumber = "Please enter the country digit"
+let enter_CountryNumber = "Please enter the country code"
 let enter_OTP = "Please enter the OTP"
 
 let phoneNumber_Url = baseUrl+"/users/phone_number_login"

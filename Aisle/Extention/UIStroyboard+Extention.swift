@@ -54,3 +54,24 @@ extension String {
         return self.replace(string: " ", replacement: "")
     }
   }
+
+extension Blurable where Self: UIView {
+    func addBlur(_ alpha: CGFloat = 0.99) {
+        // create effect
+        let effect = UIBlurEffect(style: .systemThinMaterialDark)
+        let effectView = UIVisualEffectView(effect: effect)
+        
+        // set boundry and alpha
+        effectView.frame = self.bounds
+        effectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        effectView.alpha = alpha
+        
+        self.addSubview(effectView)
+    }
+    
+    func removeBlur() {
+           self.subviews
+               .filter { $0 is UIVisualEffectView }
+               .forEach { $0.removeFromSuperview() }
+       }
+}
