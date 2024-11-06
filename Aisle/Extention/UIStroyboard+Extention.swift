@@ -11,11 +11,16 @@ extension UIStoryboard {
     
     static let Main = UIStoryboard(name: "Main", bundle: nil)
     
+    static func getAPhoneNumberVC() -> APhoneNumberVC {
+        let vc = Main.instantiateViewController(withIdentifier: "APhoneNumberVC") as! APhoneNumberVC
+        return vc
+    }
+    
     static func getAOTPVC() -> AOTPVC {
         let vc = Main.instantiateViewController(withIdentifier: "AOTPVC") as! AOTPVC
         return vc
     }
-    
+
     static func getANoteVC() -> ANoteVC {
         let vc = Main.instantiateViewController(withIdentifier: "ANoteVC") as! ANoteVC
         return vc
@@ -39,3 +44,13 @@ extension UIApplication {
         return base
     }
 }
+
+extension String {
+    func replace(string:String, replacement:String) -> String {
+        return self.replacingOccurrences(of: string, with: replacement, options: NSString.CompareOptions.literal, range: nil)
+    }
+
+    func removeWhitespace() -> String {
+        return self.replace(string: " ", replacement: "")
+    }
+  }

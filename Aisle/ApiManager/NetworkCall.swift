@@ -39,12 +39,12 @@ class NetworkCall : NSObject{
         var headerParam = [String: String]()
         
         
-        //        if GlobelFunctions.isKeyPresentInUserDefaults(key: USERD_User_Api_Totken) {
-        //            headerParam["Authorization"] = String(format: "Bearer %@", UserDefaults.standard.value(forKey: USERD_User_Api_Totken) as? String ?? "")
-        //            print(headerParam)
-        //        }
+                if GlobelFunctions.isKeyPresentInUserDefaults(key: USERD_User_Api_Totken) {
+                    headerParam["Authorization"] = String(format: "Bearer %@", UserDefaults.standard.value(forKey: USERD_User_Api_Totken) as? String ?? "")
+                    print(headerParam)
+                }
         
-        //        headerParam["x-api-key"] = "f4fd127ec8f0406e"
+                headerParam["x-api-key"] = "f4fd127ec8f0406e"
         
         headerParam["Authorization"] = "U29ueUluZGlh:QVBJVmFsdWU="
         headerParam.forEach({self.headers.add(name: $0.key, value: $0.value)})

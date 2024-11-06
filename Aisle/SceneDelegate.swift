@@ -27,22 +27,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0) {
-                
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                
-                
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "APhoneNumberVC")
-                
-                let navCon = UINavigationController.init(rootViewController: initialViewController)
-                navCon.isNavigationBarHidden=true
-                
-                
-                self.window?.rootViewController = navCon
+                if GlobelFunctions.isKeyPresentInUserDefaults(key: USERD_User_Api_Totken) {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    
+                    
+                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "ANoteVC")
+                    
+                    let navCon = UINavigationController.init(rootViewController: initialViewController)
+                    navCon.isNavigationBarHidden=true
+                    
+                    
+                    self.window?.rootViewController = navCon
+                } else {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    
+                    
+                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "APhoneNumberVC")
+                    
+                    let navCon = UINavigationController.init(rootViewController: initialViewController)
+                    navCon.isNavigationBarHidden=true
+                    
+                    
+                    self.window?.rootViewController = navCon
+                }
+                self.window?.makeKeyAndVisible()
             }
-            self.window?.makeKeyAndVisible()
         }
     }
 }
+
 
 func sceneDidDisconnect(_ scene: UIScene) {
     // Called as the scene is being released by the system.

@@ -9,6 +9,10 @@ import Foundation
 
 let baseUrl = "https://app.aisle.co/V1"
 
+let enter_PhoneNumber = "Please enter the phone number"
+let enter_CountryNumber = "Please enter the country digit"
+let enter_OTP = "Please enter the OTP"
+
 let phoneNumber_Url = baseUrl+"/users/phone_number_login"
 let otp_Url = baseUrl+"/users/verify_otp"
 let notes_Url = baseUrl+"/users/test_profile_list"
@@ -16,6 +20,8 @@ let notes_Url = baseUrl+"/users/test_profile_list"
 let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
 let SCREEN_WIDTH = UIScreen.main.bounds.size.width
 let NoInternetMsg = "The internet connection appears to be offline"
+
+let USERD_User_Api_Totken = "uAPIToken"
 
 public func ShowHUD()
 {

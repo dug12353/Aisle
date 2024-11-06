@@ -90,6 +90,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnContinueDidClicked:" destination="N8Y-jv-MgI" eventType="touchUpInside" id="2tf-ZP-sk9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bQX-vH-PgP"/>
@@ -114,7 +117,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnContinue" destination="yh1-uH-fqC" id="msd-Et-oSj"/>
+                        <outlet property="btnContinue" destination="yh1-uH-fqC" id="wyH-Pj-D6k"/>
                         <outlet property="lblEnterOTP" destination="c5M-DE-j2R" id="CDY-4F-IyF"/>
                         <outlet property="lblPhoneNumber" destination="SHW-MU-ffl" id="eJ1-9N-LOJ"/>
                         <outlet property="tfOTP" destination="Bt5-Eh-mMo" id="3vP-Zo-Bcf"/>

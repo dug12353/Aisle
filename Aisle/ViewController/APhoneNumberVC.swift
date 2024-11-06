@@ -32,6 +32,35 @@ class APhoneNumberVC: UIViewController {
         tfCountryNumber.delegate = self
         tfPhoneNumber.delegate = self
     }
+    
+    func validate() -> Bool {
+        
+        
+        
+        if tfPhoneNumber.text!.trimmingCharacters(in: .whitespaces) == "" {
+            
+            GlobelFunctions.showAlert(title: "", withMessage: enter_PhoneNumber)
+            return false
+        }
+        else if tfCountryNumber.text!.trimmingCharacters(in: .whitespaces) == "" {
+            
+            GlobelFunctions.showAlert(title: "", withMessage: enter_CountryNumber)
+            return false
+        }
+        
+        else if !NSPredicate(format: "SELF MATCHES %@", "^[0-9]{10}$").evaluate(with: tfPhoneNumber.text) {
+            GlobelFunctions.showAlert(title: "", withMessage: "Please enter a valid 10-digit phone number")
+            return false
+        }
+        else if !(NSPredicate(format: "SELF MATCHES %@", "^(\\+\\d{2}|\\d{3})$").evaluate(with: tfCountryNumber.text)) {
+            GlobelFunctions.showAlert(title: "", withMessage: "Please enter a valid country code (3 digits or in the format +XX)")
+            return false
+        }
+    
+        
+        return true
+    }
+    
 }
 
 // MARK: - View lifecycle
@@ -64,7 +93,9 @@ extension APhoneNumberVC {
 extension APhoneNumberVC {
     
     @IBAction func btnContinueDidClicked(_ sender: UIButton) {
-        self.phoneNumberApi()
+        if(self.validate()){
+            self.phoneNumberApi()
+        }
     }
 }
 

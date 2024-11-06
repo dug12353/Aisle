@@ -32,6 +32,20 @@ class AOTPVC: UIViewController {
         
         tfOTP.delegate = self
     }
+    
+    func validate() -> Bool {
+     
+        if tfOTP.text!.trimmingCharacters(in: .whitespaces).count != 4 {
+               GlobelFunctions.showAlert(title: "", withMessage: "Please enter a valid 4-digit OTP")
+               return false
+           }
+        else if tfOTP.text!.trimmingCharacters(in: .whitespaces) != "1234" {
+               GlobelFunctions.showAlert(title: "", withMessage: "Please re-enter a valid OTP")
+               return false
+           }
+        
+        return true
+    }
 }
 
 // MARK: - View lifecycle
@@ -63,11 +77,14 @@ extension AOTPVC {
 extension AOTPVC {
  
     @IBAction func btnNumberDidClicked(_ sender: UIButton) {
-        tfOTP.becomeFirstResponder()
+        let vc = UIStoryboard.getAPhoneNumberVC()
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
     @IBAction func btnContinueDidClicked(_ sender: UIButton) {
-       
+        if(self.validate()){
+            self.phoneNumberApi()
+        }
     }
 }
 
@@ -84,8 +101,8 @@ extension AOTPVC {
         
         let userInfo: [String: Any] = [
             
-            "number": "+919876543212",
-              "otp" : "1234"
+            "number": String(phoneNumber.removeWhitespace()),
+            "otp" : String(tfOTP.text!)
 
         ]
         
@@ -96,12 +113,14 @@ extension AOTPVC {
                 print(loginData)
                 if let token = loginData.token, !token.isEmpty {
                     
-                    let vc = UIStoryboard.getAOTPVC()
-                    vc.phoneNumber = "\(self.tfCountryNumber.text!) \(self.tfPhoneNumber.text!)"
+                    UserDefaults.standard.setValue(loginData.token, forKey: USERD_User_Api_Totken)
+                    UserDefaults.standard.synchronize()
+                    
+                    let vc = UIStoryboard.getANoteVC()
                     self.navigationController?.pushViewController(vc, animated: false)
                     
                 } else {
-                    GlobelFunctions.showAlert(title: "Error", withMessage: String(loginData.status!))
+                    GlobelFunctions.showAlert(title: "Error", withMessage: String(loginData.token!))
                 }
                 
             case .failure(let error):

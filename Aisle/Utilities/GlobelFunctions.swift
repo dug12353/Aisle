@@ -74,4 +74,9 @@ class GlobelFunctions: NSObject {
             
         }
      }
+    
+    class  func isKeyPresentInUserDefaults(key: String) -> Bool {
+        
+        return UserDefaults.standard.object(forKey: key) != nil
+    }
 }
