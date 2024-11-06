@@ -17,6 +17,8 @@ class AOTPVC: UIViewController {
     
     // MARK: - Members
 
+    var phoneNumber = ""
+    
     // MARK: - Initializers
     
     //MARK: - Methods
@@ -26,6 +28,7 @@ class AOTPVC: UIViewController {
         lblEnterOTP.font = .customFont(type: .Inter_Bold, size: 18)
         tfOTP.font = .customFont(type: .Inter_SemiBold, size: 18)
         btnContinue.titleLabel?.font = .customFont(type: .Inter_SemiBold, size: 16)
+        lblPhoneNumber.text = phoneNumber
         
         tfOTP.delegate = self
     }
@@ -59,11 +62,54 @@ extension AOTPVC {
 // MARK: - IBActions
 extension AOTPVC {
  
+    @IBAction func btnNumberDidClicked(_ sender: UIButton) {
+        tfOTP.becomeFirstResponder()
+    }
     
+    @IBAction func btnContinueDidClicked(_ sender: UIButton) {
+       
+    }
 }
 
 //MARK: - Network Call
 extension AOTPVC {
+    
+    func phoneNumberApi() {
+        
+        ShowHUD()
+        
+        let url = String(otp_Url)
+        
+        let headerParam = [String: String]()
+        
+        let userInfo: [String: Any] = [
+            
+            "number": "+919876543212",
+              "otp" : "1234"
+
+        ]
+        
+        NetworkCall(data: userInfo, headers: headerParam, url: url, service: nil, method: .post ,isJSONRequest: false).executeQuery(){
+            (result: Result<OTPDataModel,Error>) in
+            switch result{
+            case .success(let loginData):
+                print(loginData)
+                if let token = loginData.token, !token.isEmpty {
+                    
+                    let vc = UIStoryboard.getAOTPVC()
+                    vc.phoneNumber = "\(self.tfCountryNumber.text!) \(self.tfPhoneNumber.text!)"
+                    self.navigationController?.pushViewController(vc, animated: false)
+                    
+                } else {
+                    GlobelFunctions.showAlert(title: "Error", withMessage: String(loginData.status!))
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
+            RemoveHUD()
+        }
+    }
     
 }
 

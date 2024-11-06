@@ -42,7 +42,7 @@
         <!--AOTPVC-->
         <scene sceneID="Bci-hW-kZg">
             <objects>
-                <viewController id="N8Y-jv-MgI" customClass="AOTPVC" customModule="Aisle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AOTPVC" id="N8Y-jv-MgI" customClass="AOTPVC" customModule="Aisle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OvH-3b-pWP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,6 +63,9 @@
                                 <rect key="frame" x="30" y="89" width="180" height="31.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="btnNumberDidClicked:" destination="N8Y-jv-MgI" eventType="touchUpInside" id="HQh-5N-Tri"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter The OTP" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5M-DE-j2R">
                                 <rect key="frame" x="30" y="150.5" width="175" height="72"/>
@@ -73,7 +76,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bt5-Eh-mMo">
                                 <rect key="frame" x="30" y="242.5" width="125" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21.780000686645508"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yh1-uH-fqC" customClass="ButtonRoundCorner" customModule="Aisle" customModuleProvider="target">
                                 <rect key="frame" x="30" y="308.5" width="96" height="40"/>
@@ -124,7 +127,7 @@
         <!--Phone NumberVC-->
         <scene sceneID="Qlv-ET-1gg">
             <objects>
-                <viewController id="ETd-mz-Re1" customClass="APhoneNumberVC" customModule="Aisle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="APhoneNumberVC" id="ETd-mz-Re1" customClass="APhoneNumberVC" customModule="Aisle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zYu-om-Kcx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,7 +144,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u9H-qs-0is">
+                            <textField opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+91" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u9H-qs-0is">
                                 <rect key="frame" x="30" y="233" width="70" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="TEy-bd-GU1"/>
@@ -149,7 +152,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
-                            <textField opaque="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kea-0L-2M9">
+                            <textField opaque="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="9876543212" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kea-0L-2M9">
                                 <rect key="frame" x="120" y="233" width="155" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -166,6 +169,9 @@
                                 <state key="normal" title="Continue">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnContinueDidClicked:" destination="ETd-mz-Re1" eventType="touchUpInside" id="5ZZ-Ga-zNz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LCX-cg-jQ1"/>
@@ -186,7 +192,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnContinue" destination="zX8-yR-z7e" id="20K-Nx-CHT"/>
+                        <outlet property="btnContinue" destination="zX8-yR-z7e" id="LfT-WA-2ed"/>
                         <outlet property="lblEnterNumber" destination="29C-lG-ZrS" id="qbG-VV-f1m"/>
                         <outlet property="lblOTP" destination="70g-v4-lxP" id="3a2-u7-opX"/>
                         <outlet property="tfCountryNumber" destination="u9H-qs-0is" id="6h0-H4-eYG"/>
@@ -197,10 +203,10 @@
             </objects>
             <point key="canvasLocation" x="1002" y="-742"/>
         </scene>
-        <!--View Controller-->
+        <!--NoteVC-->
         <scene sceneID="jgp-rq-zLX">
             <objects>
-                <viewController id="xMY-kW-7PJ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ANoteVC" id="xMY-kW-7PJ" customClass="ANoteVC" customModule="Aisle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jf2-6O-wPK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

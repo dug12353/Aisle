@@ -8,7 +8,7 @@
 import UIKit
 
 class APhoneNumberVC: UIViewController {
-
+    
     // MARK: - IBOutlets
     @IBOutlet weak var lblOTP: UILabel!
     @IBOutlet weak var lblEnterNumber: UILabel!
@@ -17,7 +17,7 @@ class APhoneNumberVC: UIViewController {
     @IBOutlet weak var tfPhoneNumber: UITextField!
     
     // MARK: - Members
-
+    
     // MARK: - Initializers
     
     //MARK: - Methods
@@ -36,7 +36,7 @@ class APhoneNumberVC: UIViewController {
 
 // MARK: - View lifecycle
 extension APhoneNumberVC {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,15 +46,15 @@ extension APhoneNumberVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-
-   override  func viewDidAppear(_ animated: Bool) {
+    
+    override  func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-
-   override  func viewWillDisappear(_ animated: Bool) {
+    
+    override  func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
-
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
     }
@@ -62,12 +62,50 @@ extension APhoneNumberVC {
 
 // MARK: - IBActions
 extension APhoneNumberVC {
- 
     
+    @IBAction func btnContinueDidClicked(_ sender: UIButton) {
+        self.phoneNumberApi()
+    }
 }
 
 //MARK: - Network Call
 extension APhoneNumberVC {
+    
+    func phoneNumberApi() {
+        
+        ShowHUD()
+        
+        let url = String(phoneNumber_Url)
+        
+        let headerParam = [String: String]()
+        
+        let userInfo: [String: Any] = [
+            
+//            "number": "+919876543212"
+            "number": "\(self.tfCountryNumber.text!)\(self.tfPhoneNumber.text!)"
+        ]
+        
+        NetworkCall(data: userInfo, headers: headerParam, url: url, service: nil, method: .post ,isJSONRequest: false).executeQuery(){
+            (result: Result<PhoneDataModel,Error>) in
+            switch result{
+            case .success(let loginData):
+                print(loginData)
+                if let status = loginData.status, status == true {
+                    
+                    let vc = UIStoryboard.getAOTPVC()
+                    vc.phoneNumber = "\(self.tfCountryNumber.text!) \(self.tfPhoneNumber.text!)"
+                    self.navigationController?.pushViewController(vc, animated: false)
+                    
+                } else {
+                    GlobelFunctions.showAlert(title: "Error", withMessage: String(loginData.status!))
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
+            RemoveHUD()
+        }
+    }
     
 }
 
@@ -84,6 +122,6 @@ extension APhoneNumberVC : UITextFieldDelegate{
         
         return newText.count <= maxLength
     }
-
-
+    
+    
 }
