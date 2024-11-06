@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ETd-mz-Re1">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -14,7 +14,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Aisle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -29,7 +29,7 @@
             <objects>
                 <viewController id="EQw-wT-EIp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c5W-tE-tzM">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Oed-0o-GBb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -39,44 +39,44 @@
             </objects>
             <point key="canvasLocation" x="984" y="-35"/>
         </scene>
-        <!--View Controller-->
+        <!--AOTPVC-->
         <scene sceneID="Bci-hW-kZg">
             <objects>
-                <viewController id="N8Y-jv-MgI" sceneMemberID="viewController">
+                <viewController id="N8Y-jv-MgI" customClass="AOTPVC" customModule="Aisle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OvH-3b-pWP">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+91 9999999999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHW-MU-ffl">
-                                <rect key="frame" x="30" y="139" width="136" height="21"/>
+                                <rect key="frame" x="30" y="100" width="136" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fluent_edit-24-filled" translatesAutoresizingMaskIntoConstraints="NO" id="Mov-4v-RIW">
-                                <rect key="frame" x="176" y="142.66666666666666" width="14" height="14"/>
+                                <rect key="frame" x="176" y="103.5" width="14" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Mov-4v-RIW" secondAttribute="height" multiplier="1:1" id="ENH-JT-6jV"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twN-J5-3vU">
-                                <rect key="frame" x="30" y="127.99999999999999" width="180" height="40.333333333333329"/>
+                                <rect key="frame" x="30" y="89" width="180" height="31.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter The OTP" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5M-DE-j2R">
-                                <rect key="frame" x="30" y="198.33333333333334" width="193" height="71.666666666666657"/>
+                                <rect key="frame" x="30" y="150.5" width="175" height="72"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bt5-Eh-mMo">
-                                <rect key="frame" x="30" y="290" width="143" height="36"/>
+                                <rect key="frame" x="30" y="242.5" width="125" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21.780000686645508"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yh1-uH-fqC">
-                                <rect key="frame" x="30" y="356" width="96" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yh1-uH-fqC" customClass="ButtonRoundCorner" customModule="Aisle" customModuleProvider="target">
+                                <rect key="frame" x="30" y="308.5" width="96" height="40"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Ni5-uQ-Je3"/>
@@ -110,56 +110,62 @@
                             <constraint firstItem="bQX-vH-PgP" firstAttribute="trailing" secondItem="c5M-DE-j2R" secondAttribute="trailing" constant="170" id="xOf-Tb-Ems"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnContinue" destination="yh1-uH-fqC" id="msd-Et-oSj"/>
+                        <outlet property="lblEnterOTP" destination="c5M-DE-j2R" id="CDY-4F-IyF"/>
+                        <outlet property="lblPhoneNumber" destination="SHW-MU-ffl" id="eJ1-9N-LOJ"/>
+                        <outlet property="tfOTP" destination="Bt5-Eh-mMo" id="3vP-Zo-Bcf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggy-aZ-es1" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1715" y="-742"/>
         </scene>
-        <!--View Controller-->
+        <!--Phone NumberVC-->
         <scene sceneID="Qlv-ET-1gg">
             <objects>
-                <viewController id="ETd-mz-Re1" customClass="ViewController" customModule="Aisle_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ETd-mz-Re1" customClass="APhoneNumberVC" customModule="Aisle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zYu-om-Kcx">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GET OTP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70g-v4-lxP">
-                                <rect key="frame" x="30" y="139" width="76" height="21"/>
+                                <rect key="frame" x="30" y="100" width="76" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Your Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29C-lG-ZrS">
-                                <rect key="frame" x="30" y="190" width="263" height="71.666666666666686"/>
+                                <rect key="frame" x="30" y="141" width="245" height="72"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u9H-qs-0is">
-                                <rect key="frame" x="30" y="281.66666666666669" width="70" height="34"/>
+                            <textField opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u9H-qs-0is">
+                                <rect key="frame" x="30" y="233" width="70" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="TEy-bd-GU1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kea-0L-2M9">
-                                <rect key="frame" x="120" y="281.66666666666669" width="173" height="34"/>
+                            <textField opaque="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kea-0L-2M9">
+                                <rect key="frame" x="120" y="233" width="155" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zX8-yR-z7e" customClass="CustomButton" customModule="Aisle_Challenge" customModuleProvider="target">
-                                <rect key="frame" x="30" y="355.66666666666669" width="96" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zX8-yR-z7e" customClass="ButtonRoundCorner" customModule="Aisle" customModuleProvider="target">
+                                <rect key="frame" x="30" y="307" width="96" height="40"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="IEK-f0-TN1"/>
                                     <constraint firstAttribute="height" constant="40" id="jqF-Sj-ko9"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Continue">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LCX-cg-jQ1"/>
@@ -170,7 +176,7 @@
                             <constraint firstItem="LCX-cg-jQ1" firstAttribute="trailing" secondItem="29C-lG-ZrS" secondAttribute="trailing" constant="100" id="CR0-rN-xir"/>
                             <constraint firstItem="kea-0L-2M9" firstAttribute="leading" secondItem="u9H-qs-0is" secondAttribute="trailing" constant="20" id="Ckd-Ws-MAS"/>
                             <constraint firstItem="kea-0L-2M9" firstAttribute="top" secondItem="u9H-qs-0is" secondAttribute="top" id="DS3-Yu-ZS0"/>
-                            <constraint firstItem="29C-lG-ZrS" firstAttribute="top" secondItem="70g-v4-lxP" secondAttribute="bottom" constant="30" id="OD3-r5-WiD"/>
+                            <constraint firstItem="29C-lG-ZrS" firstAttribute="top" secondItem="70g-v4-lxP" secondAttribute="bottom" constant="20" id="OD3-r5-WiD"/>
                             <constraint firstItem="kea-0L-2M9" firstAttribute="trailing" secondItem="29C-lG-ZrS" secondAttribute="trailing" id="Ow9-zy-hRI"/>
                             <constraint firstItem="u9H-qs-0is" firstAttribute="leading" secondItem="LCX-cg-jQ1" secondAttribute="leading" constant="30" id="Wg8-Yw-CCa"/>
                             <constraint firstItem="29C-lG-ZrS" firstAttribute="leading" secondItem="70g-v4-lxP" secondAttribute="leading" id="ghj-Gj-N5l"/>
@@ -179,6 +185,13 @@
                             <constraint firstItem="u9H-qs-0is" firstAttribute="top" secondItem="29C-lG-ZrS" secondAttribute="bottom" constant="20" id="jHs-vK-mJv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnContinue" destination="zX8-yR-z7e" id="20K-Nx-CHT"/>
+                        <outlet property="lblEnterNumber" destination="29C-lG-ZrS" id="qbG-VV-f1m"/>
+                        <outlet property="lblOTP" destination="70g-v4-lxP" id="3a2-u7-opX"/>
+                        <outlet property="tfCountryNumber" destination="u9H-qs-0is" id="6h0-H4-eYG"/>
+                        <outlet property="tfPhoneNumber" destination="kea-0L-2M9" id="h9s-3h-sRC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zET-Or-rQs" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,7 +202,7 @@
             <objects>
                 <viewController id="xMY-kW-7PJ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jf2-6O-wPK">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="zey-9m-LA8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

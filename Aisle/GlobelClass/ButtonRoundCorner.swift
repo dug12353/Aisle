@@ -1,5 +1,5 @@
 //
-//  FCBaseButton.swift
+//  ButtonRoundCorner.swift
 //  Aisle
 //
 //  Created by Shivam Maurya on 06/11/24.
@@ -8,47 +8,6 @@
 
 import UIKit
 
-class FCBaseButton: UIButton {
-    
-    /*
-     // Only override draw() if you perform custom drawing.
-     // An empty implementation adversely affects performance during animation.
-     override func draw(_ rect: CGRect) {
-     // Drawing code
-     }
-     */
-    var indexPath : IndexPath?
-    var section : Int?
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
-        setup()
-    }
-    
-    //This method does the necessary UI adjustments
-    func setup()
-    {
-        
-        
-        if(Device.IS_IPHONE){
-            // device is iPhone
-            if Orientation.isPortrait {
-              //  self.font = self.font.withSize((SCREEN_WIDTH/375.0) * self.font.pointSize)
-                self.titleLabel?.font = self.titleLabel?.font.withSize((SCREEN_WIDTH/375.0) * (self.titleLabel?.font.pointSize)!)
-                    }
-        }else if(Device.IS_IPAD){
-            
-    
-            
-            if Orientation.isPortrait {
-              //  self.font = self.font.withSize((SCREEN_WIDTH/375.0) * self.font.pointSize)
-                self.titleLabel?.font = self.titleLabel?.font.withSize((SCREEN_WIDTH/375.0) * (self.titleLabel?.font.pointSize)!)
-            }else if Orientation.isLandscape{
-                self.titleLabel?.font = self.titleLabel?.font.withSize((SCREEN_HEIGHT/375.0) * (self.titleLabel?.font.pointSize)!)
-            }
-
-        }
-    }
-}
 
 class ButtonRoundCorner: UIButton {
     
@@ -68,8 +27,9 @@ class ButtonRoundCorner: UIButton {
     
     func setup()
     {
-        self.tintColor = UIColor.white
-        self.backgroundColor = GlobelFunctions.hexStringToUIColor(hex: "#B20000")
+        self.tintColor = UIColor.black
+//        self.backgroundColor = GlobelFunctions.hexStringToUIColor(hex: "#B20000")
+        self.backgroundColor = UIColor.systemYellow
         
         if(Device.IS_IPHONE){
             // device is iPhone
@@ -91,7 +51,7 @@ class ButtonRoundCorner: UIButton {
         }
         
         
-        self.layer.cornerRadius = 4
+        self.layer.cornerRadius = self.frame.height / 2
         layer.masksToBounds = true
     }
     
