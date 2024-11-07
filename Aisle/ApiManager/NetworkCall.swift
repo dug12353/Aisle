@@ -9,6 +9,33 @@ import Foundation
 import Alamofire
 import SwiftyDrop
 
+class APIManager {
+    class func headers() -> HTTPHeaders {
+        var headers: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        ]
+        
+        // Check if the token is present in UserDefaults
+        if GlobelFunctions.isKeyPresentInUserDefaults(key: USERD_User_Api_Totken) {
+            // Retrieve and add the Authorization token to headers
+            if let token = UserDefaults.standard.value(forKey: USERD_User_Api_Totken) as? String {
+                headers["Authorization"] = "Bearer \(token)"
+                print(headers)
+            }
+            
+            if let token = UserDefaults.standard.string(forKey: USERD_User_Api_Totken) {
+                       headers["Authorization"] = "Bearer \(token)"
+                       print("Authorization Header: \(headers["Authorization"] ?? "")")
+                   } else {
+                       print("Token not found in UserDefaults")
+                   }
+        }
+        
+        return headers
+    }
+}
+
 class NetworkCall : NSObject{
     
     enum services :String{

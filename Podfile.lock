@@ -2,12 +2,14 @@ PODS:
   - Alamofire (5.9.1)
   - BulletinBoard (5.0.0)
   - IQKeyboardManagerSwift (7.0.0)
+  - Kingfisher (7.12.0)
   - SwiftyDrop (4.2.0)
 
 DEPENDENCIES:
   - Alamofire
   - BulletinBoard
   - IQKeyboardManagerSwift (= 7.0.0)
+  - Kingfisher
   - SwiftyDrop (~> 4.2)
 
 SPEC REPOS:
@@ -15,14 +17,16 @@ SPEC REPOS:
     - Alamofire
     - BulletinBoard
     - IQKeyboardManagerSwift
+    - Kingfisher
     - SwiftyDrop
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
   BulletinBoard: dba77053c2a7b64953f63073f7534165af2edd21
   IQKeyboardManagerSwift: bd69f3a49f6ead9cb6ce17723cf0c6c9b948d83e
+  Kingfisher: 53a10ea35051a436b5fb626ca2dd8f3144d755e9
   SwiftyDrop: c5b306082dfbd7d6b9c1e569dcdd2ab13306e552
 
-PODFILE CHECKSUM: 648ceca7fb8c4c222abd8bf3f362a9efb53cf8dd
+PODFILE CHECKSUM: 821819eb73ecfe9c9a669ef62bd4380d4d6a046d
 
 COCOAPODS: 1.16.2

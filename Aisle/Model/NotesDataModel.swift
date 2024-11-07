@@ -8,8 +8,8 @@
 
 // MARK: - NotesDataModel
 struct NotesDataModel: Codable {
-    let invites: Invites
-    let likes: Likes
+    let invites: Invites?
+    let likes: Likes?
 }
 
 // MARK: - Invites
@@ -87,7 +87,8 @@ struct GeneralInformation: Codable {
     enum CodingKeys: String, CodingKey {
         case dateOfBirth = "date_of_birth"
         case dateOfBirthV1 = "date_of_birth_v1"
-        case location, drinkingV1, firstName, gender
+        case location, firstName, gender
+        case drinkingV1 = "drinking_v1"
         case maritalStatusV1 = "marital_status_v1"
         case refID = "ref_id"
         case smokingV1 = "smoking_v1"
