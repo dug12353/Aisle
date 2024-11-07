@@ -296,6 +296,12 @@
                                     <action selector="btnContinueDidClicked:" destination="N8Y-jv-MgI" eventType="touchUpInside" id="2tf-ZP-sk9"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78f-We-qaU">
+                                <rect key="frame" x="146" y="318" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bQX-vH-PgP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -304,11 +310,13 @@
                             <constraint firstItem="Bt5-Eh-mMo" firstAttribute="leading" secondItem="bQX-vH-PgP" secondAttribute="leading" constant="30" id="2TJ-FE-46r"/>
                             <constraint firstItem="Bt5-Eh-mMo" firstAttribute="top" secondItem="c5M-DE-j2R" secondAttribute="bottom" constant="20" id="3aV-fF-s64"/>
                             <constraint firstItem="c5M-DE-j2R" firstAttribute="top" secondItem="twN-J5-3vU" secondAttribute="bottom" constant="30" id="Acc-0M-lvb"/>
+                            <constraint firstItem="78f-We-qaU" firstAttribute="leading" secondItem="yh1-uH-fqC" secondAttribute="trailing" constant="20" id="C9p-jJ-Ij4"/>
                             <constraint firstItem="SHW-MU-ffl" firstAttribute="top" secondItem="bQX-vH-PgP" secondAttribute="top" constant="80" id="HWc-RM-mLZ"/>
                             <constraint firstItem="Mov-4v-RIW" firstAttribute="centerY" secondItem="SHW-MU-ffl" secondAttribute="centerY" id="JjM-GZ-3Gd"/>
                             <constraint firstItem="twN-J5-3vU" firstAttribute="height" secondItem="OvH-3b-pWP" secondAttribute="height" multiplier="0.0473396" id="KJS-zM-h5W"/>
                             <constraint firstItem="Bt5-Eh-mMo" firstAttribute="trailing" secondItem="c5M-DE-j2R" secondAttribute="trailing" constant="-50" id="LZK-cq-drU"/>
                             <constraint firstItem="yh1-uH-fqC" firstAttribute="top" secondItem="Bt5-Eh-mMo" secondAttribute="bottom" constant="30" id="OZf-ky-em1"/>
+                            <constraint firstItem="78f-We-qaU" firstAttribute="centerY" secondItem="yh1-uH-fqC" secondAttribute="centerY" id="Pgh-aA-fF2"/>
                             <constraint firstItem="Mov-4v-RIW" firstAttribute="leading" secondItem="SHW-MU-ffl" secondAttribute="trailing" constant="10" id="a0P-xw-sQB"/>
                             <constraint firstItem="twN-J5-3vU" firstAttribute="top" secondItem="bQX-vH-PgP" secondAttribute="top" constant="69" id="a51-Di-vxi"/>
                             <constraint firstItem="yh1-uH-fqC" firstAttribute="leading" secondItem="bQX-vH-PgP" secondAttribute="leading" constant="30" id="jVY-xI-OOn"/>
@@ -322,6 +330,7 @@
                         <outlet property="btnContinue" destination="yh1-uH-fqC" id="wyH-Pj-D6k"/>
                         <outlet property="lblEnterOTP" destination="c5M-DE-j2R" id="CDY-4F-IyF"/>
                         <outlet property="lblPhoneNumber" destination="SHW-MU-ffl" id="eJ1-9N-LOJ"/>
+                        <outlet property="lblTimer" destination="78f-We-qaU" id="LDy-gh-HcT"/>
                         <outlet property="tfOTP" destination="Bt5-Eh-mMo" id="3vP-Zo-Bcf"/>
                     </connections>
                 </viewController>

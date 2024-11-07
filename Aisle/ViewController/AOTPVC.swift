@@ -14,10 +14,13 @@ class AOTPVC: UIViewController {
     @IBOutlet weak var lblEnterOTP: UILabel!
     @IBOutlet weak var tfOTP: UITextField!
     @IBOutlet weak var btnContinue: ButtonRoundCorner!
+    @IBOutlet weak var lblTimer: UILabel!
     
     // MARK: - Members
 
     var phoneNumber = ""
+    var timer: Timer?
+    var totalTime = 60
     
     // MARK: - Initializers
     
@@ -29,6 +32,8 @@ class AOTPVC: UIViewController {
         tfOTP.font = .customFont(type: .Inter_SemiBold, size: 18)
         btnContinue.titleLabel?.font = .customFont(type: .Inter_SemiBold, size: 16)
         lblPhoneNumber.text = phoneNumber
+        
+        btnContinue.isUserInteractionEnabled = true
         
         tfOTP.delegate = self
     }
@@ -46,6 +51,35 @@ class AOTPVC: UIViewController {
         
         return true
     }
+    
+    private func startOtpTimer() {
+        self.totalTime = 60
+        self.lblTimer.text = self.timeFormatted(self.totalTime)
+        self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+    }
+
+    @objc func updateTimer() {
+        print(self.totalTime)
+        self.lblTimer.text = self.timeFormatted(self.totalTime) // will show timer
+        
+        if totalTime != 0 {
+            totalTime -= 1 // decrease counter timer
+        }
+        else {
+            if let timer = self.timer {
+                timer.invalidate()
+                self.timer = nil
+                self.btnContinue.isUserInteractionEnabled = false
+                GlobelFunctions.showAlert(title: "", withMessage: "Please try again")
+            }
+        }
+    }
+
+    func timeFormatted(_ totalSeconds: Int) -> String {
+        let seconds: Int = totalSeconds % 60
+        let minutes: Int = (totalSeconds / 60) % 60
+        return String(format: "%02d:%02d", minutes, seconds)
+    }
 }
 
 // MARK: - View lifecycle
@@ -53,11 +87,14 @@ extension AOTPVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setInitials()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        DispatchQueue.main.async {
+            self.startOtpTimer()
+        }
+        self.setInitials()
     }
 
    override  func viewDidAppear(_ animated: Bool) {
