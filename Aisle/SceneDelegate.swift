@@ -31,7 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     
                     
-                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "ANoteVC")
+                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "AHomeVC")
                     
                     let navCon = UINavigationController.init(rootViewController: initialViewController)
                     navCon.isNavigationBarHidden=true

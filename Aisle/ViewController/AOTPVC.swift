@@ -116,7 +116,7 @@ extension AOTPVC {
                     UserDefaults.standard.setValue(loginData.token, forKey: USERD_User_Api_Totken)
                     UserDefaults.standard.synchronize()
                     
-                    let vc = UIStoryboard.getANoteVC()
+                    let vc = UIStoryboard.getHomeVC()
                     self.navigationController?.pushViewController(vc, animated: false)
                     
                 } else {

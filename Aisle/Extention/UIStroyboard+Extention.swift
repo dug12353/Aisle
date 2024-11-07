@@ -26,6 +26,10 @@ extension UIStoryboard {
         return vc
     }
     
+    static func getHomeVC() -> AHomeVC {
+        let vc = Main.instantiateViewController(withIdentifier: "AHomeVC") as! AHomeVC
+        return vc
+    }
 }
 
 extension UIApplication {

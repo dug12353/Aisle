@@ -24,6 +24,10 @@ class ANoteVC: UIViewController {
     @IBOutlet weak var imgFirstPerson: UIImageView!
     @IBOutlet weak var imgSecondPerson: UIImageView!
     @IBOutlet weak var btnUpgrade: ButtonRoundCorner!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblTapReview: UILabel!
+    @IBOutlet weak var lblFirstName: UILabel!
+    @IBOutlet weak var lblSecondName: UILabel!
     
     // MARK: - Members
 
@@ -39,6 +43,10 @@ class ANoteVC: UIViewController {
         lblInterested.font = .customFont(type: .Inter_Bold, size: 22)
         lblPremiumMember.font = .customFont(type: .Inter_SemiBold, size: 15)
         btnUpgrade.titleLabel?.font = .customFont(type: .Inter_Bold, size: 15)
+        lblName.font = .customFont(type: .Inter_Bold, size: 22)
+        lblTapReview.font = .customFont(type: .Inter_SemiBold, size: 15)
+        lblFirstName.font = .customFont(type: .Inter_SemiBold, size: 18)
+        lblSecondName.font = .customFont(type: .Inter_SemiBold, size: 18)
     }
     
     private func setData() {
@@ -105,6 +113,10 @@ class ANoteVC: UIViewController {
 //                self.imgView?.image = UIImage(named: "Vector")
             }
         }
+        
+        lblName.text = membershipDataClass?.invites?.profiles[0].generalInformation.firstName
+        lblFirstName.text = membershipDataClass?.likes?.profiles[0].firstName
+        lblSecondName.text = membershipDataClass?.likes?.profiles[1].firstName
         
     }
 }
