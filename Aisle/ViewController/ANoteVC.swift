@@ -126,8 +126,7 @@ extension ANoteVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        imgFirstPerson.addBlur()
-        imgSecondPerson.addBlur()
+
         self.getNoteData()
         self.setInitials()
     }
@@ -153,8 +152,10 @@ extension ANoteVC {
 extension ANoteVC {
  
     @IBAction func btnUpgradeDidClicked(_ sender: Any) {
-        imgFirstPerson.removeBlur()
-        imgSecondPerson.removeBlur()
+        GlobelFunctions.showAlert(title: "", withMessage: "Congratulations! You have successfully upgraded to premium version") {
+            self.imgFirstPerson.removeBlur()
+            self.imgSecondPerson.removeBlur()
+        }
     }
     
 }
